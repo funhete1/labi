@@ -18,6 +18,9 @@ if not os.path.isfile(iname):
 if (os.stat(iname).st_size == 0):
     print("File is empty!")
     sys.exit()
+if (os.path.getsize(iname)%16 != 0):
+    print("File is no encrypted by AES")
+    sys.exit()
 
 if len(k) < 16:
     h = SHA.new()
@@ -26,10 +29,9 @@ if len(k) < 16:
     
 k = k[0:16]
 
-f = open(iname, "rb")
+f = open(iname, "r")
 
-texto = f.read().decode('utf-8')
-texto += " "*(16-len(texto)%16)
+texto = f.read()
 
 cipher = AES.new(k)
-os.write(1, cipher.encrypt(texto))
+os.write(1, cipher.decrypt(texto))
