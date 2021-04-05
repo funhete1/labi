@@ -1,7 +1,6 @@
 import pytest
 from fibonacci import fibonacci
 
-
 def teste1():
     if fibonacci(0) == [0] and fibonacci(-1) == []:
         print("Teste OK")
@@ -14,4 +13,5 @@ def test_inferior_1():
     assert fibonacci(-1) == []
 
 
-
+teste1()
+test_inferior_1()
