@@ -1,0 +1,6 @@
+Numero secreto
+Numero inteiro 0 a 100
+tentativas 10 a 30
+Criara um arquivo report.csv para mostrar as tentativas dos usuarios
+
+

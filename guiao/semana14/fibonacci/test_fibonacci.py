@@ -11,7 +11,3 @@ def test_inferior_1():
     print("Testa comprotamento com n < 1")
     assert fibonacci(0) == [0]
     assert fibonacci(-1) == []
-
-
-teste1()
-test_inferior_1()
